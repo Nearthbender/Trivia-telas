@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/widgets/questions/question1.dart';
 
 class MainButton extends StatefulWidget {
   final Color color;
@@ -19,7 +20,12 @@ class MainButtonState extends State<MainButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-                onPressed: () => print("teste1"), 
+                onPressed: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Question1()),
+                  )
+                }, 
                 child: 
                   Container(
                     width: 250,

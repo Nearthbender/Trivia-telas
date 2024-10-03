@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/home/widgets/button.dart';
+import 'package:trivia_game/widgets/backgroundHome.dart';
+import 'package:trivia_game/widgets/home/widgets/interfaceHome.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -7,21 +8,16 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Center( 
         child: 
-          Column(
+          Stack(
             children: [
-              SizedBox(height: 100),
-              Text(
-                "Trivia Game",
-                style: TextStyle(fontSize: 35),
-              ),
-              Text("Vale do São Francisco"),
-              Expanded(
+              BackgroundHome(),
+              SizedBox.expand(
                 child: 
-                  MainButton(text: "Começar", color: Colors.green),
-              ),
+                  InterfaceHome(),
+              )
             ],
+          )
         )
-      )
-    );
-  }
+     );
+    }
 }
